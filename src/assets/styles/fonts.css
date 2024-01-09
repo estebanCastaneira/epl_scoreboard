@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Nootype Radikal";
+  src: url("../fonts/Nootype Radikal UltraThin.otf") format("opentype");
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nootype Radikal";
+  src: url("../fonts/Nootype Radikal Thin.otf") format("opentype");
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nootype Radikal";
+  src: url("../fonts/Nootype Radikal Light.otf") format("opentype");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nootype Radikal";
+  src: url("../fonts/Nootype Radikal.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nootype Radikal";
+  src: url("../fonts/Nootype Radikal Medium.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nootype Radikal";
+  src: url("../fonts/Nootype Radikal Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
