@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  font-family: "Nootype Radikal";
-  font-weight: 700;
-} */
+:root {
+  --violet: #532479;
+}
+
+.timer {
+  background-color: var(--violet);
+}
