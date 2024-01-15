@@ -1,17 +1,17 @@
 function Team({ name, score, firstColor, secondColor, home }) {
   return (
     <div
-      className={`bg-${firstColor}-600 flex items-center justify-end  w-[100%] text-white relative 
-      ${home && "flex-row-reverse"} h-14`}
+      className={`px-2 ${firstColor} flex items-center justify-end w-[100%] text-white relative 
+      ${home && "flex-row-reverse"} h-10`}
     >
       <p
         className={`${
-          home ? "right-12" : "left-12"
-        } sm:text-9xl text-8xl font-bold absolute lef`}
+          home ? "right-10" : "left-10"
+        } text-7xl font-bold absolute`}
       >
         {score}
       </p>
-      <p className="sm:text-6xl text-4xl font-bold uppercase absolute">
+      <p className="text-4xl font-bold uppercase tracking-widest top-1 absolute">
         {name}
       </p>
     </div>
