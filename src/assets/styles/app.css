@@ -5,7 +5,10 @@
 :root {
   --violet: #532479;
 }
-
+p {
+  margin: 0 !important;
+  line-height: normal !important;
+}
 .timer {
   background-color: var(--violet);
 }
