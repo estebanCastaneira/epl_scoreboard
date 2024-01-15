@@ -4,8 +4,9 @@ import "./assets/styles/fonts.css"
 function App() {
   return (
     <>
-      <div className="app flex items-center justify-center min-h-svh font-radikal">
+      <div className="flex items-center justify-center min-h-svh font-radikal">
         <Scoreboard />
+        <div className="app"></div>
       </div>
     </>
   )
