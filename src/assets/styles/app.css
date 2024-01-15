@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --violet: #5a2c7f;
+  --violet: #45013e;
 }
 .app {
   background-image: url("/img/background.png");
@@ -18,7 +18,7 @@ p {
   margin: 0;
   line-height: normal;
 }
-
+/*** TIMER ***/
 .timer {
   background-color: var(--violet);
 }

@@ -6,7 +6,7 @@ function App() {
     <>
       <div className="flex flex-col items-center justify-evenly min-h-svh font-radikal">
         <Scoreboard />
-        <div className="app"></div>
+        <div className="app opacity-95"></div>
       </div>
     </>
   )
