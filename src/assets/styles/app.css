@@ -5,6 +5,9 @@
 :root {
   --violet: #532479;
 }
+.app {
+  background-image: url("/img/background.png");
+}
 p {
   margin: 0 !important;
   line-height: normal !important;
