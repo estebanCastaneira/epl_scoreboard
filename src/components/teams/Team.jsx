@@ -1,7 +1,9 @@
-function Team({ name, score, firstColor, secondColor, home }) {
+function Team({ name, score, bgColor, secondColor, home }) {
   return (
     <div
-      className={`px-2 ${firstColor} flex items-center justify-end w-[100%] text-white relative 
+      className={`px-2  ${
+        home ? "bg-gradient-to-r" : "bg-gradient-to-l"
+      } from-transparent ${bgColor} flex items-center justify-end w-[100%] text-white relative 
       ${home && "flex-row-reverse"} h-10`}
     >
       <p
@@ -11,7 +13,11 @@ function Team({ name, score, firstColor, secondColor, home }) {
       >
         {score}
       </p>
-      <p className="text-4xl font-bold uppercase tracking-widest top-1 absolute">
+      <p
+        className={`text-4xl font-bold uppercase tracking-widest top-1 absolute ${
+          home ? "left-6" : "right-6"
+        }`}
+      >
         {name}
       </p>
     </div>

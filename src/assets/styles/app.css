@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --violet: #532479;
+  --violet: #5a2c7f;
 }
 .app {
   background-image: url("/img/background.png");
@@ -15,9 +15,13 @@
   filter: brightness(80%);
 }
 p {
-  margin: 0 !important;
-  line-height: normal !important;
+  margin: 0;
+  line-height: normal;
 }
+
 .timer {
   background-color: var(--violet);
+}
+.time {
+  margin-top: 0.5rem;
 }
