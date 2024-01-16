@@ -5,15 +5,15 @@ function StartButton({}) {
   const dispatch = useDispatch()
   const [btnTxt, setBtnTxt] = useState("Start Match!")
 
-  const handleOnClick = () => {
+  const handleStartTime = () => {
     setBtnTxt("1st Time!")
-    dispatch(firstTime("tamo acá"))
+    dispatch(firstTime())
   }
   return (
     <div>
       <button
         className="py-2 px-6 bg-slate-200 rounded-lg hover:brightness-90"
-        onClick={handleOnClick}
+        onClick={handleStartTime}
       >
         {btnTxt}
       </button>
