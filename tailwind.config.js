@@ -4,6 +4,9 @@ export default {
   theme: {
     extend: {
       fontSize: { score: "14rem" },
+      screens: {
+        custom: "370px",
+      },
     },
     fontFamily: {
       radikal: ["Nootype Radikal", "sans-serif"],

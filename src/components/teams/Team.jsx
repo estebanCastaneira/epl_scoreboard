@@ -9,12 +9,12 @@ function Team({ name, score, bgColor, secondColor, home }) {
       <p
         className={`${
           home ? "right-10" : "left-10"
-        } text-7xl font-bold absolute`}
+        } custom:text-7xl text-6xl font-bold absolute`}
       >
         {score}
       </p>
       <p
-        className={`text-4xl font-bold uppercase tracking-widest top-1 absolute ${
+        className={`custom:text-4xl text-3xl font-bold uppercase tracking-widest top-1 absolute ${
           home ? "left-6" : "right-6"
         }`}
       >

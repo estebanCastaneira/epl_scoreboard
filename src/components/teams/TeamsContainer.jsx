@@ -15,7 +15,7 @@ function TeamsContainer() {
 
       <Away
         name={"liv"}
-        score={1}
+        score={0}
         home={false}
         bgColor={"to-red-700 via-red-600"}
       />
