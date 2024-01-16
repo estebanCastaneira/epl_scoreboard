@@ -10,6 +10,7 @@ export default {
     },
     fontFamily: {
       radikal: ["Nootype Radikal", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
   },
 

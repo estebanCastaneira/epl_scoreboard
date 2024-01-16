@@ -1,36 +1,67 @@
 @font-face {
   font-family: "Nootype Radikal";
-  src: url("../fonts/Nootype Radikal UltraThin.otf") format("opentype");
+  src: url("../fonts/Nootype/Nootype Radikal UltraThin.otf") format("opentype");
   font-weight: 100;
   font-display: swap;
 }
 @font-face {
   font-family: "Nootype Radikal";
-  src: url("../fonts/Nootype Radikal Thin.otf") format("opentype");
+  src: url("../fonts/Nootype/Nootype Radikal Thin.otf") format("opentype");
   font-weight: 200;
   font-display: swap;
 }
 @font-face {
   font-family: "Nootype Radikal";
-  src: url("../fonts/Nootype Radikal Light.otf") format("opentype");
+  src: url("../fonts/Nootype/Nootype Radikal Light.otf") format("opentype");
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
   font-family: "Nootype Radikal";
-  src: url("../fonts/Nootype Radikal.otf") format("opentype");
+  src: url("../fonts/Nootype/Nootype Radikal.otf") format("opentype");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "Nootype Radikal";
-  src: url("../fonts/Nootype Radikal Medium.otf") format("opentype");
+  src: url("../fonts/Nootype/Nootype Radikal Medium.otf") format("opentype");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: "Nootype Radikal";
-  src: url("../fonts/Nootype Radikal Bold.otf") format("opentype");
+  src: url("../fonts/Nootype/Nootype Radikal Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Thin.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
 }

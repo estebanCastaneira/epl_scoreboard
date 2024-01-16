@@ -25,3 +25,8 @@ p {
 .time {
   margin-top: 0.5rem;
 }
+
+/*** BUTTONS ***/
+button {
+  color: var(--violet);
+}
