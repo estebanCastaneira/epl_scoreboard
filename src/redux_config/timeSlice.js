@@ -2,8 +2,11 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   totalSeconds: 2700, // 45 minutos en segundos
-  initialTime: 0,
-  isRunning: false,
+  time: 0,
+  isFirstTime: false,
+  isSecondTime: false,
+  isTimeUp: false,
+  isFinished: false,
 }
 
 const timeSlice = createSlice({
@@ -11,18 +14,33 @@ const timeSlice = createSlice({
   initialState,
   reducers: {
     firstTime(state) {
-      return { ...state, isRunning: true }
+      return { ...state, isFirstTime: true }
     },
     updateTimer(state) {
-      if (state.initialTime < 2700) {
-        const updatedRemainingSeconds = state.initialTime + 20
+      if (state.time < 2700 && (!state.isTimeUp || state.isFirstTime)) {
+        const updatedRemainingSeconds = state.time + 60
         return {
           ...state,
-          initialTime: Math.max(updatedRemainingSeconds, 0),
-          isRunning: updatedRemainingSeconds < 2700,
+          time: Math.max(updatedRemainingSeconds, 0),
+          isFirstTime: updatedRemainingSeconds < 2700,
+          isTimeUp: true,
         }
       }
+      if (state.time < 5400 && state.isTimeUp) {
+        const updatedRemainingSeconds = state.time + 60
+        return {
+          ...state,
+          time: Math.max(updatedRemainingSeconds, 0),
+          isSecondTime: updatedRemainingSeconds > 2700,
+        }
+      }
+      if (state.time >= 5400) {
+        return { ...state, isSecondTime: false, isFinished: true }
+      }
       return state
+    },
+    secondTime(state) {
+      return { ...state, isSecondTime: true }
     },
     resetTimer(state) {
       return {
@@ -34,5 +52,6 @@ const timeSlice = createSlice({
   },
 })
 
-export const { firstTime, updateTimer, resetTimer } = timeSlice.actions
+export const { firstTime, updateTimer, secondTime, resetTimer } =
+  timeSlice.actions
 export default timeSlice.reducer

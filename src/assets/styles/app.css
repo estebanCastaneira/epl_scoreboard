@@ -4,6 +4,7 @@
 
 :root {
   --violet: #45013e;
+  --green: #79bf79;
 }
 .app {
   background-image: url("/img/background.png");

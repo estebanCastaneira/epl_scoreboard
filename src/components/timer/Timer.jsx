@@ -1,33 +1,39 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { firstTime, updateTimer } from "../../redux_config/timeSlice"
+import { updateTimer } from "../../redux_config/timeSlice"
 function Timer() {
   const dispatch = useDispatch()
-  const { initialTime, isRunning } = useSelector((state) => state.time)
+  const { time, isFirstTime, isSecondTime } = useSelector((state) => state.time)
 
   useEffect(() => {
     let timerInterval
 
-    if (isRunning) {
+    if (isFirstTime) {
+      timerInterval = setInterval(() => {
+        dispatch(updateTimer())
+      }, 1000)
+    }
+    if (isSecondTime) {
       timerInterval = setInterval(() => {
         dispatch(updateTimer())
       }, 1000)
     }
 
     return () => clearInterval(timerInterval)
-  }, [dispatch, isRunning])
+  }, [dispatch, isFirstTime, isSecondTime])
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
-    return `${String(minutes).padStart(2, "0")}:${String(
-      remainingSeconds
-    ).padStart(2, "0")}`
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60)
+    const initialTime = time % 60
+    return `${String(minutes).padStart(2, "0")}:${String(initialTime).padStart(
+      2,
+      "0"
+    )}`
   }
   return (
     <div className="timer rounded-b-2xl w-44 h-10 flex justify-center items-center">
       <p className="text-white text-3xl font-bold tracking-widest time">
-        {formatTime(initialTime)}
+        {formatTime(time)}
       </p>
     </div>
   )
