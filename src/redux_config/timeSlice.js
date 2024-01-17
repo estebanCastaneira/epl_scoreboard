@@ -1,13 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  firstHalf: 2700, // 45 minutos en segundos
+  firstHalf: 2700,
   secondHalf: 5400,
+  injuryTime: 0,
   time: 0,
   isFirstHalf: false,
   isSecondHalf: false,
-  isTimeUp: false,
+  isHalfTime: false,
   isFinished: false,
+}
+const updateRemainingSeconds = (state, additionalTime) => {
+  const updatedRemainingSeconds = state.time + additionalTime
+  return {
+    ...state,
+    time: Math.max(updatedRemainingSeconds, 0),
+  }
 }
 
 const timeSlice = createSlice({
@@ -18,24 +26,32 @@ const timeSlice = createSlice({
       return { ...state, isFirstHalf: true }
     },
     updateTimer(state) {
-      if (state.time < 2700 && (!state.isTimeUp || state.isFirstHalf)) {
-        const updatedRemainingSeconds = state.time + 60
+      const interval = 300
+      if (
+        state.time < state.firstHalf + state.injuryTime &&
+        state.isFirstHalf
+      ) {
+        const updatedRemainingSeconds = state.time + interval
         return {
           ...state,
           time: Math.max(updatedRemainingSeconds, 0),
-          isFirstHalf: updatedRemainingSeconds < 2700,
-          isTimeUp: true,
+          isFirstHalf:
+            updatedRemainingSeconds < state.firstHalf + state.injuryTime,
+          isHalfTime: true,
         }
       }
-      if (state.time < 5400 && state.isTimeUp) {
-        const updatedRemainingSeconds = state.time + 60
+      if (
+        state.time < state.secondHalf + state.injuryTime &&
+        state.isSecondHalf
+      ) {
+        const updatedRemainingSeconds = state.time + interval
         return {
           ...state,
           time: Math.max(updatedRemainingSeconds, 0),
-          isSecondHalf: updatedRemainingSeconds > 2700,
+          isSecondHalf: true,
         }
       }
-      if (state.time >= 5400) {
+      if (state.time >= state.secondHalf) {
         return { ...state, isSecondHalf: false, isFinished: true }
       }
       return state
@@ -44,11 +60,7 @@ const timeSlice = createSlice({
       return { ...state, isSecondHalf: true }
     },
     resetTimer(state) {
-      return {
-        ...state,
-        remainingSeconds: state.totalSeconds,
-        isRunning: false,
-      }
+      return { ...state }
     },
   },
 })
