@@ -1,11 +1,12 @@
-import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { firstTime, secondTime } from "../../redux_config/timeSlice"
+import { useEffect, useState } from "react"
 function StartButton({}) {
   const dispatch = useDispatch()
   const { isFirstTime, isSecondTime, isTimeUp, isFinished } = useSelector(
     (state) => state.time
   )
+  const [btnTxt, setBtnTxt] = useState()
 
   const handleStartTime = () => {
     if (!isFirstTime && !isSecondTime && !isTimeUp) {
@@ -15,6 +16,18 @@ function StartButton({}) {
       dispatch(secondTime())
     }
   }
+  useEffect(() => {
+    const btnState = isFinished
+      ? "Finished!"
+      : isFirstTime
+      ? "1st Time!"
+      : isSecondTime
+      ? "2nd Time!"
+      : isTimeUp
+      ? "Start 2nd Half!"
+      : "Start Match"
+    setBtnTxt(btnState)
+  }, [isFirstTime, isSecondTime, isTimeUp, isFinished])
   return (
     <div>
       <button
@@ -24,15 +37,7 @@ function StartButton({}) {
         }`}
         onClick={handleStartTime}
       >
-        {isFinished
-          ? "Finished!"
-          : isFirstTime
-          ? "1st Time!"
-          : isSecondTime
-          ? "2nd Time!"
-          : isTimeUp
-          ? "Start 2nd Half!"
-          : "Start Match!"}
+        {btnTxt}
       </button>
     </div>
   )
