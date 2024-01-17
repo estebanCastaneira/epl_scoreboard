@@ -3,24 +3,24 @@ import { useDispatch, useSelector } from "react-redux"
 import { updateTimer } from "../../redux_config/timeSlice"
 function Timer() {
   const dispatch = useDispatch()
-  const { time, isFirstTime, isSecondTime } = useSelector((state) => state.time)
+  const { time, isFirstHalf, isSecondHalf } = useSelector((state) => state.time)
 
   useEffect(() => {
     let timerInterval
 
-    if (isFirstTime) {
+    if (isFirstHalf) {
       timerInterval = setInterval(() => {
         dispatch(updateTimer())
       }, 1000)
     }
-    if (isSecondTime) {
+    if (isSecondHalf) {
       timerInterval = setInterval(() => {
         dispatch(updateTimer())
       }, 1000)
     }
 
     return () => clearInterval(timerInterval)
-  }, [dispatch, isFirstTime, isSecondTime])
+  }, [dispatch, isFirstHalf, isSecondHalf])
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60)
