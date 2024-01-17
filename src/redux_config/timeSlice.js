@@ -56,11 +56,11 @@ const timeSlice = createSlice({
       }
       return state
     },
-    secondHalf(state) {
+    secondHalf(state, action) {
       return { ...state, isSecondHalf: true }
     },
-    resetTimer(state) {
-      return { ...state }
+    resetTimer(state, action) {
+      return initialState
     },
   },
 })

@@ -31,7 +31,7 @@ function StartButton({}) {
   return (
     <div>
       <button
-        className={`py-2 px-6 bg-slate-200 rounded-lg hover:brightness-90 flex justify-center items-center ${
+        className={`py-2 px-6 w-40 bg-slate-200 rounded-lg hover:brightness-90 flex justify-center items-center ${
           (isFirstHalf || isSecondHalf || isFinished) &&
           "pointer-events-none cursor-none brightness-75"
         }`}

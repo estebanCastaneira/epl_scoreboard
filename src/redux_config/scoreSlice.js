@@ -12,7 +12,10 @@ const scoreSlice = createSlice({
         state.away += 1
       }
     },
+    resetScore(state, action) {
+      return { home: 0, away: 0 }
+    },
   },
 })
-export const { setGoal } = scoreSlice.actions
+export const { setGoal, resetScore } = scoreSlice.actions
 export default scoreSlice.reducer
