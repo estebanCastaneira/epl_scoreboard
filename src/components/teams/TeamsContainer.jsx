@@ -3,12 +3,13 @@ import Away from "./Team"
 import LionLogo from "../lionlogo/LionLogo"
 import { useSelector } from "react-redux"
 function TeamsContainer() {
-  const score = useSelector((state) => state.incidences)
+  const incidences = useSelector((state) => state.incidences)
+
   return (
     <div className="flex w-[100%] mx-auto my-0 relative">
       <Home
         name={"eve"}
-        score={score.home}
+        score={incidences.home.incidences.score}
         home={true}
         bgColor={"to-blue-950 via-blue-600"}
       />
@@ -17,7 +18,7 @@ function TeamsContainer() {
 
       <Away
         name={"liv"}
-        score={score.away}
+        score={incidences.away.incidences.score}
         home={false}
         bgColor={"to-red-950 via-red-600"}
       />

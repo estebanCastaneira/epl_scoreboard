@@ -1,19 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
-
+import teams from "../data/teams"
 const incidencesSlice = createSlice({
   name: "incidences",
-  initialState: { home: 0, away: 0 },
+  initialState: teams,
   reducers: {
-    setGoal(state, action) {
-      const { team } = action.payload
-      if (team === "home") {
-        state.home += 1
-      } else if (team === "away") {
-        state.away += 1
-      }
-    },
+    setGoal(state, action) {},
     resetScore(state, action) {
-      return { home: 0, away: 0 }
+      return teams
     },
   },
 })
