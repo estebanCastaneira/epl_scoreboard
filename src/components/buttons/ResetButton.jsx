@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { resetTimer } from "../../redux_config/timeSlice"
 import { useEffect, useState } from "react"
-import { resetScore } from "../../redux_config/scoreSlice"
+import { resetScore } from "../../redux_config/incidencesSlice"
 function ResetButton() {
   const { isFinished } = useSelector((state) => state.time)
   const dispatch = useDispatch()

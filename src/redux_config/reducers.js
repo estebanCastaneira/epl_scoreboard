@@ -1,10 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit"
 import timeReducer from "./timeSlice"
-import scoreReducer from "./scoreSlice"
+import incidencesSlice from "./incidencesSlice"
 
 const rootReducer = combineReducers({
   time: timeReducer,
-  score: scoreReducer,
+  incidences: incidencesSlice,
 })
 
 export default rootReducer

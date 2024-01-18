@@ -3,7 +3,7 @@ import Away from "./Team"
 import LionLogo from "../lionlogo/LionLogo"
 import { useSelector } from "react-redux"
 function TeamsContainer() {
-  const score = useSelector((state) => state.score)
+  const score = useSelector((state) => state.incidences)
   return (
     <div className="flex w-[100%] mx-auto my-0 relative">
       <Home

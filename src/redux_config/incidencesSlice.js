@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const scoreSlice = createSlice({
-  name: "score",
+const incidencesSlice = createSlice({
+  name: "incidences",
   initialState: { home: 0, away: 0 },
   reducers: {
     setGoal(state, action) {
@@ -17,5 +17,5 @@ const scoreSlice = createSlice({
     },
   },
 })
-export const { setGoal, resetScore } = scoreSlice.actions
-export default scoreSlice.reducer
+export const { setGoal, resetScore } = incidencesSlice.actions
+export default incidencesSlice.reducer
