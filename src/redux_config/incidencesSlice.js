@@ -4,11 +4,18 @@ const incidencesSlice = createSlice({
   name: "incidences",
   initialState: teams,
   reducers: {
-    setGoal(state, action) {},
-    resetScore(state, action) {
+    setGoal(state, action) {
+      const team = action.payload
+      if (team === "home") {
+        state.home.incidences.score += 1
+      } else {
+        state.away.incidences.score += 1
+      }
+    },
+    resetTeams(state, action) {
       return teams
     },
   },
 })
-export const { setGoal, resetScore } = incidencesSlice.actions
+export const { setGoal, resetTeams } = incidencesSlice.actions
 export default incidencesSlice.reducer
