@@ -10,7 +10,7 @@ function TeamsContainer() {
         name={"eve"}
         score={score.home}
         home={true}
-        bgColor={"to-blue-700 via-blue-600"}
+        bgColor={"to-blue-950 via-blue-600"}
       />
 
       <LionLogo />
@@ -19,7 +19,7 @@ function TeamsContainer() {
         name={"liv"}
         score={score.away}
         home={false}
-        bgColor={"to-red-700 via-red-600"}
+        bgColor={"to-red-950 via-red-600"}
       />
     </div>
   )

@@ -1,4 +1,4 @@
-function Team({ name, score, bgColor, secondColor, home }) {
+function Team({ name, score, bgColor, home }) {
   return (
     <div
       className={`px-2  ${

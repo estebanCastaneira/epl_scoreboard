@@ -18,8 +18,8 @@ function ResetButton() {
   return (
     <div>
       <button
-        className={`py-2 px-6 w-40 bg-slate-200 rounded-lg hover:brightness-90 flex justify-center items-center ${
-          !btnState && "pointer-events-none cursor-none brightness-75"
+        className={`py-2 px-6 w-40 bg-slate-200 rounded-lg hover:brightness-90 flex justify-center items-center  ${
+          !btnState && "hidden pointer-events-none cursor-none brightness-75"
         }`}
         onClick={handleResetTime}
       >
