@@ -8,14 +8,16 @@ import Display from "./components/display/Display"
 function App() {
   return (
     <>
-      <div className="app flex flex-col items-center gap-14 min-h-svh font-radikal py-20">
-        <Scoreboard />
-        <Display />
-        <div className="flex flex-col justify-center items-center gap-3 sm:flex-row">
-          <StartButton />
-          <ResetButton />
+      <div className="app font-radikal">
+        <div className="flex flex-col items-center gap-14 my-10">
+          <Scoreboard />
+          <Display />
+          <div className="flex flex-col justify-center items-center gap-3 sm:flex-row">
+            <StartButton />
+            <ResetButton />
+          </div>
+          <IncidencesSelector />
         </div>
-        <IncidencesSelector />
       </div>
     </>
   )
