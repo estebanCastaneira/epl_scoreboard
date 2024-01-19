@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setGoal } from "../../redux_config/incidencesSlice"
-import Player from "../selector/Player"
+import getPlayerName from "../../functions/getPlayerName"
+import formatTime from "../../functions/formatTime"
 
 function GoForIt({
   incidence,
@@ -13,7 +14,7 @@ function GoForIt({
   substitution,
   setSubstitution,
 }) {
-  const { isFirstHalf, isSecondHalf, isHalfTime } = useSelector(
+  const { time, isFirstHalf, isSecondHalf, isHalfTime } = useSelector(
     (state) => state.time
   )
   const [active, setActive] = useState(false)
@@ -31,11 +32,13 @@ function GoForIt({
     // if (!active) return
 
     if (incidence === "score") {
+      const playerName = getPlayerName(player)
+      const formatTime = formatTime(time)
       setIncidence("")
       setTeam("")
       setPlayer("")
       setSubstitution("")
-      dispatch(setGoal(team, player))
+      dispatch(setGoal({ team: team, player: playerName, time: formatTime }))
     }
   }
 
