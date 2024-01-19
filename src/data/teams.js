@@ -16,7 +16,7 @@ const teams = {
         "37- James Garner",
       ],
       forwards: ["9- Dominic Calvert-Lewin"],
-      substitutions: [
+      bench: [
         "12- Joao Virgínia",
         "2- Nathan Patterson",
         "5- Michael Kane",
@@ -51,7 +51,7 @@ const teams = {
         "17- Curtis Jones",
       ],
       forwards: ["7- Luis Diaz", "9- Darwin Núñez", "11- Mohamed Salah"],
-      substitutions: [
+      bench: [
         "62- Caoimhin Kelleher",
         "68- Jarell Quansah",
         "84- Connor Bradley",

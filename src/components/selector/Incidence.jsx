@@ -17,7 +17,7 @@ function Incidence({ incidence, setIncidence }) {
         <option value="score">Goal!</option>
         <option value="yellowCard">Yellow Card</option>
         <option value="redCard">Red Card</option>
-        <option value="subtitution">Substitution</option>
+        <option value="substitution">Substitution</option>
       </select>
     </div>
   )

@@ -5,11 +5,13 @@ const incidencesSlice = createSlice({
   initialState: teams,
   reducers: {
     setGoal(state, action) {
-      const team = action.payload
+      const { team, player } = action.payload
       if (team === "home") {
         state.home.incidences.score += 1
+        state.home.incidences.goals.push(player)
       } else {
         state.away.incidences.score += 1
+        state.away.incidences.goals.push(player)
       }
     },
     resetTeams(state, action) {
