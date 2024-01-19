@@ -3,16 +3,17 @@ function Team({ team, setTeam }) {
     setTeam(event.target.value)
   }
   return (
-    <div className="flex flex-col gap-1">
-      <label htmlFor="team">Team:</label>
+    <div className="flex">
       <select
         value={team}
         onChange={handleOnChange}
-        className="py-2 px-6 w-40 rounded-lg"
+        className="py-2 px-6 w-56 rounded-lg"
         name="team"
         id="team"
       >
-        <option value=""></option>
+        <option value="" selected disabled>
+          Pick a Team
+        </option>
         <option value="home">Everton</option>
         <option value="away">Liverpool</option>
       </select>

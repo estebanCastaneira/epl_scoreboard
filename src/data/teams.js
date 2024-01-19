@@ -30,6 +30,7 @@ const teams = {
     },
     incidences: {
       score: 0,
+      goals: [],
       yellowCard: [],
       redCard: [],
       substitutions: [],
@@ -42,7 +43,7 @@ const teams = {
         "2- Joe Gomez",
         "4- Virgil Van Dijk",
         "5- Ibrahima Konaté",
-        "66- Tren Alexander-Arnold",
+        "66- Trent Alexander-Arnold",
       ],
       midfielders: [
         "3- Wataru Endo",
@@ -64,6 +65,7 @@ const teams = {
     },
     incidences: {
       score: 0,
+      goals: [],
       yellowCard: [],
       redCard: [],
       substitutions: [],
