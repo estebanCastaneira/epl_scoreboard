@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { setGoal } from "../../redux_config/incidencesSlice"
+import {
+  setGoal,
+  setYellowCard,
+  setRedCard,
+} from "../../redux_config/incidencesSlice"
 import getPlayerName from "../../functions/getPlayerName"
 import getMinute from "../../functions/getMinute"
 
@@ -33,11 +37,27 @@ function GoForIt({
 
     if (incidence === "score" && team && player) {
       const playerName = getPlayerName(player)
-      const formatedTime = getMinute(time)
+      const minute = getMinute(time)
       setIncidence("")
       setTeam("")
       setPlayer("")
-      dispatch(setGoal({ team: team, player: playerName, time: formatedTime }))
+      dispatch(setGoal({ team: team, player: playerName, time: minute }))
+    }
+    if (incidence === "yellowCard" && team && player) {
+      const playerName = getPlayerName(player)
+      const minute = getMinute(time)
+      setIncidence("")
+      setTeam("")
+      setPlayer("")
+      dispatch(setYellowCard({ team: team, player: playerName, time: minute }))
+    }
+    if (incidence === "redCard" && team && player) {
+      const playerName = getPlayerName(player)
+      const minute = getMinute(time)
+      setIncidence("")
+      setTeam("")
+      setPlayer("")
+      dispatch(setRedCard({ team: team, player: playerName, time: minute }))
     }
   }
 
