@@ -30,32 +30,14 @@ function Player({ team, player, setPlayer }) {
         id="team"
         onChange={handleOnChange}
       >
-        {team === "" ? (
-          <>
-            <option value={"Select a Team"} disabled>
-              Select a Team
-            </option>
-          </>
-        ) : (
-          <>
-            {selectedTeamPlayers.map((player, i) =>
-              i === 0 ? (
-                <>
-                  <option key={"pickaplayer"} selected disabled>
-                    Pick a Player
-                  </option>
-                  <option key={i} value={player}>
-                    {player}
-                  </option>
-                </>
-              ) : (
-                <option key={i} value={player}>
-                  {player}
-                </option>
-              )
-            )}
-          </>
-        )}
+        <option selected disabled>
+          {team ? "Pick a Player" : "Select a Team"}
+        </option>
+        {selectedTeamPlayers.map((player, i) => (
+          <option key={i} value={player}>
+            {player}
+          </option>
+        ))}
       </select>
     </div>
   )

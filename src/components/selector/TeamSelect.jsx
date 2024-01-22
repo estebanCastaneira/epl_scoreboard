@@ -7,7 +7,7 @@ function Team({ team, setTeam }) {
       <select
         value={team}
         onChange={handleOnChange}
-        className="py-2 px-6 w-56 rounded-lg"
+        className="py-2 px-6 w-56 rounded-lg text-center"
         name="team"
         id="team"
       >

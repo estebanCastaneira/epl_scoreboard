@@ -1,11 +1,11 @@
-function Incidence({ incidence, setIncidence }) {
+function IncidenceSelect({ incidence, setIncidence }) {
   const handleOnChange = (event) => {
     setIncidence(event.target.value)
   }
   return (
     <div className="flex">
       <select
-        className="py-2 px-6 w-56 rounded-lg"
+        className="py-2 px-6 w-56 rounded-lg text-center"
         name="incidence"
         id="incidence"
         value={incidence}
@@ -23,4 +23,4 @@ function Incidence({ incidence, setIncidence }) {
   )
 }
 
-export default Incidence
+export default IncidenceSelect

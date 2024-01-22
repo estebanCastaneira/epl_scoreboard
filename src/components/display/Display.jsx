@@ -4,6 +4,8 @@ import { useSelector } from "react-redux"
 function Display() {
   const eveIncidences = useSelector((state) => state.incidences.home.incidences)
   const livIncidences = useSelector((state) => state.incidences.away.incidences)
+  const startMatch = useSelector((state) => state.time)
+
   const [homeInc, setHomeInc] = useState([])
   const [awayInc, setAwayInc] = useState([])
 

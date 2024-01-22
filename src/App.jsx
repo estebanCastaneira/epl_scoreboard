@@ -1,7 +1,7 @@
 import Scoreboard from "./components/scoreboard/Scoreboard"
 import StartButton from "./components/buttons/StartButton"
 import ResetButton from "./components/buttons/ResetButton"
-import IncidencesSelector from "./components/selector/IncidenceSelector"
+import PanelSelector from "./components/selector/PanelSelector"
 import "./assets/styles/app.css"
 import "./assets/styles/fonts.css"
 import Display from "./components/display/Display"
@@ -16,7 +16,7 @@ function App() {
             <ResetButton />
           </div>
           <Display />
-          <IncidencesSelector />
+          <PanelSelector />
         </div>
       </div>
     </>

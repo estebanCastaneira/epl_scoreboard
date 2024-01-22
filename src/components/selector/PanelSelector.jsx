@@ -1,11 +1,11 @@
 import { useState } from "react"
-import Incidence from "./Incidence"
-import Team from "./Team"
+import IncidenceSelect from "./IncidenceSelect"
+import TeamSelect from "./TeamSelect"
 import GoForIt from "../buttons/GoForIt"
-import Player from "./Player"
-import Substitution from "./Substitution"
+import PlayerSelect from "./PlayerSelect"
+import SubstitutionSelect from "./SubstitutionSelect"
 
-function IncidencesSelector() {
+function PanelSelector() {
   const [incidence, setIncidence] = useState("")
   const [team, setTeam] = useState("")
   const [player, setPlayer] = useState("")
@@ -13,11 +13,11 @@ function IncidencesSelector() {
 
   return (
     <div className="flex flex-wrap sm:flex-row justify-center gap-2 items-center">
-      <Incidence incidence={incidence} setIncidence={setIncidence} />
-      <Team team={team} setTeam={setTeam} />
-      <Player team={team} player={player} setPlayer={setPlayer} />
+      <IncidenceSelect incidence={incidence} setIncidence={setIncidence} />
+      <TeamSelect team={team} setTeam={setTeam} />
+      <PlayerSelect team={team} player={player} setPlayer={setPlayer} />
       {incidence === "substitution" && (
-        <Substitution
+        <SubstitutionSelect
           team={team}
           substitution={substitution}
           setSubstitution={setSubstitution}
@@ -37,4 +37,4 @@ function IncidencesSelector() {
   )
 }
 
-export default IncidencesSelector
+export default PanelSelector
