@@ -5,6 +5,7 @@ const initialState = {
   secondHalf: 5400,
   injuryTime: 0,
   time: 0,
+  isStarted: false,
   isFirstHalf: false,
   isSecondHalf: false,
   isHalfTime: false,
@@ -23,7 +24,7 @@ const timeSlice = createSlice({
   initialState,
   reducers: {
     firstHalf(state) {
-      return { ...state, isFirstHalf: true }
+      return { ...state, isFirstHalf: true, isStarted: true }
     },
     updateTimer(state) {
       const interval = 60

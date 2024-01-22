@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 function Display() {
   const eveIncidences = useSelector((state) => state.incidences.home.incidences)
   const livIncidences = useSelector((state) => state.incidences.away.incidences)
-  const startMatch = useSelector((state) => state.time)
+  const { isStarted } = useSelector((state) => state.time)
 
   const [homeInc, setHomeInc] = useState([])
   const [awayInc, setAwayInc] = useState([])
@@ -12,10 +12,27 @@ function Display() {
   useEffect(() => {
     setHomeInc(eveIncidences)
     setAwayInc(livIncidences)
-    console.log(eveIncidences, livIncidences)
   }, [eveIncidences, livIncidences])
   return (
-    <div className="h-[38vh] sm:h-[50vh] w-[90%] sm:w-[80%] p-3 flex justify-around bg-white bg-blur-lg bg-opacity-20 rounded-lg overscroll-y-contain overflow-auto">
+    <div
+      className={`h-[38vh] sm:h-[50vh] w-[90%] sm:w-[80%] pb-3 px-3 flex justify-around bg-white bg-blur-lg bg-opacity-20 rounded-lg overscroll-y-contain overflow-auto relative text-white text-xs sm:text-sm ${
+        isStarted ? "pt-10" : "pt-3"
+      }`}
+    >
+      <div
+        className={`flex flex-col items-center z-10 justify-center absolute top-0 ${
+          !isStarted && "hidden"
+        }`}
+      >
+        <img
+          className="w-6"
+          src="/icons/whistle.png"
+          alt="whistle icon"
+          typeof="png"
+        />
+        <p>0' Match Start!</p>
+      </div>
+
       <div className="border-r border-slate-200 w-[100%]">
         {/* {homeInc.map((inc, i) => (
           <p key={i}>inc</p>
