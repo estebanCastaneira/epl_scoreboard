@@ -6,14 +6,14 @@ function Player({ team, player, setPlayer }) {
   const [selectedTeamPlayers, setSelectedTeamPlayers] = useState([])
   const everton = useSelector((state) => state.incidences.home.lineup)
   const liverpool = useSelector((state) => state.incidences.away.lineup)
-  console.log(team)
+
   useEffect(() => {
     const players =
-      team === "home"
+      team === ""
+        ? []
+        : team === "home"
         ? playersArray(everton)
-        : team.team === "away"
-        ? playersArray(liverpool)
-        : []
+        : playersArray(liverpool)
 
     setSelectedTeamPlayers(players)
   }, [team, everton, liverpool])
@@ -30,20 +30,30 @@ function Player({ team, player, setPlayer }) {
         id="team"
         onChange={handleOnChange}
       >
-        {selectedTeamPlayers.length === 0 ? (
-          <option selected disabled>
-            Select a Team
-          </option>
+        {team === "" ? (
+          <>
+            <option value={"Select a Team"} disabled>
+              Select a Team
+            </option>
+          </>
         ) : (
           <>
-            <option selected disabled>
-              Pick a Player
-            </option>
-            {selectedTeamPlayers.map((player, i) => (
-              <option key={i} value={player}>
-                {player}
-              </option>
-            ))}
+            {selectedTeamPlayers.map((player, i) =>
+              i === 0 ? (
+                <>
+                  <option key={"pickaplayer"} selected disabled>
+                    Pick a Player
+                  </option>
+                  <option key={i} value={player}>
+                    {player}
+                  </option>
+                </>
+              ) : (
+                <option key={i} value={player}>
+                  {player}
+                </option>
+              )
+            )}
           </>
         )}
       </select>

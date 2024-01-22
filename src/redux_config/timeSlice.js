@@ -26,7 +26,7 @@ const timeSlice = createSlice({
       return { ...state, isFirstHalf: true }
     },
     updateTimer(state) {
-      const interval = 300
+      const interval = 60
       if (
         state.time < state.firstHalf + state.injuryTime &&
         state.isFirstHalf
