@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
-import { firstHalf, secondHalf } from "../../redux_config/timeSlice"
+import {
+  firstHalf,
+  secondHalf,
+  setInjuryTime,
+} from "../../redux_config/timeSlice"
 import { useEffect, useState } from "react"
 function StartButton({}) {
   const dispatch = useDispatch()
@@ -13,6 +17,7 @@ function StartButton({}) {
       dispatch(firstHalf())
     }
     if (isHalfTime) {
+      dispatch(setInjuryTime(0))
       dispatch(secondHalf())
     }
   }
