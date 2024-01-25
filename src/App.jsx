@@ -5,6 +5,7 @@ import PanelSelector from "./components/selectors/PanelSelector"
 import "./assets/styles/app.css"
 import "./assets/styles/fonts.css"
 import Display from "./components/display/Display"
+import InjuryTimeSelect from "./components/selectors/InjuryTimeSelect"
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <div className="flex flex-col justify-center items-center gap-3 sm:flex-row">
             <StartButton />
             <ResetButton />
+            <InjuryTimeSelect />
           </div>
           <Display />
           <PanelSelector />

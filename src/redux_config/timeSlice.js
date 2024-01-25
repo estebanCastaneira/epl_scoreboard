@@ -27,7 +27,7 @@ const timeSlice = createSlice({
       return { ...state, isFirstHalf: true, isStarted: true }
     },
     updateTimer(state) {
-      const interval = 60
+      const interval = 300
       if (
         state.time < state.firstHalf + state.injuryTime &&
         state.isFirstHalf
@@ -58,11 +58,10 @@ const timeSlice = createSlice({
       return state
     },
     secondHalf(state, action) {
-      return { ...state, isSecondHalf: true }
+      return { ...state, isSecondHalf: true, time: 2700, injuryTime: 0 }
     },
     setInjuryTime(state, action) {
-      const additionalTime = action.payload
-      return { ...state, injuryTime: additionalTime }
+      return { ...state, injuryTime: action.payload }
     },
     resetTimer(state, action) {
       return initialState
