@@ -1,7 +1,7 @@
 import Scoreboard from "./components/scoreboard/Scoreboard"
 import StartButton from "./components/buttons/StartButton"
 import ResetButton from "./components/buttons/ResetButton"
-import PanelSelector from "./components/selector/PanelSelector"
+import PanelSelector from "./components/selectors/PanelSelector"
 import "./assets/styles/app.css"
 import "./assets/styles/fonts.css"
 import Display from "./components/display/Display"

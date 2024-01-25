@@ -60,12 +60,16 @@ const timeSlice = createSlice({
     secondHalf(state, action) {
       return { ...state, isSecondHalf: true }
     },
+    setInjuryTime(state, action) {
+      const additionalTime = action.payload
+      return { ...state, injuryTime: additionalTime }
+    },
     resetTimer(state, action) {
       return initialState
     },
   },
 })
 
-export const { firstHalf, updateTimer, secondHalf, resetTimer } =
+export const { firstHalf, updateTimer, secondHalf, setInjuryTime, resetTimer } =
   timeSlice.actions
 export default timeSlice.reducer
