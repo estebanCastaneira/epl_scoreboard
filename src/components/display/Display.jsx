@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import formatTime from "../../functions/formatTime"
+import getMinute from "../../functions/getMinute"
 
 function Display() {
   const eveIncidences = useSelector((state) => state.incidences.home.incidences)
@@ -11,11 +11,15 @@ function Display() {
 
   const [homeInc, setHomeInc] = useState([])
   const [awayInc, setAwayInc] = useState([])
+  const [minutes, setMinutes] = useState()
 
   useEffect(() => {
     setHomeInc(eveIncidences)
     setAwayInc(livIncidences)
-  }, [eveIncidences, livIncidences])
+    if (isFinished) {
+      setMinutes(getMinute(time, injuryTime))
+    }
+  }, [eveIncidences, livIncidences, isFinished, time, injuryTime])
   return (
     <div
       className={`h-[38vh] sm:h-[50vh] w-[90%] sm:w-[80%]  px-3 flex justify-around bg-white bg-blur-lg bg-opacity-20 rounded-lg overscroll-y-contain overflow-auto relative text-white text-xs sm:text-sm ${
@@ -57,7 +61,7 @@ function Display() {
           alt="whistle icon"
           typeof="png"
         />
-        <p>{String((time + injuryTime) / 60)}' Match Finished!</p>
+        <p>{minutes}' Match Finished!</p>
       </div>
     </div>
   )
