@@ -9,6 +9,7 @@
 .app {
   background-image: url("/img/background.png");
   object-fit: cover;
+  height: 100vh;
   padding: 2.5rem 0;
   z-index: -100;
   filter: brightness(80%);
