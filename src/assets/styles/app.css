@@ -8,8 +8,7 @@
 }
 .app {
   background-image: url("/img/background.png");
-  object-fit: cover;
-  height: 100vh;
+  object-fit: cover cover;
   padding: 2.5rem 0;
   z-index: -100;
   filter: brightness(80%);
@@ -31,4 +30,32 @@ label {
 }
 .time {
   margin-top: 0.5rem;
+}
+.injury-time {
+  background: rgb(217, 121, 4);
+  background: -moz-linear-gradient(
+    98deg,
+    rgba(217, 121, 4, 1) 0%,
+    rgba(219, 1, 1, 1) 25%,
+    rgba(219, 76, 124, 1) 50%,
+    rgba(223, 23, 89, 1) 75%,
+    rgba(212, 0, 71, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    98deg,
+    rgba(217, 121, 4, 1) 0%,
+    rgba(219, 1, 1, 1) 25%,
+    rgba(219, 76, 124, 1) 50%,
+    rgba(223, 23, 89, 1) 75%,
+    rgba(212, 0, 71, 1) 100%
+  );
+  background: linear-gradient(
+    98deg,
+    rgba(217, 121, 4, 1) 0%,
+    rgba(219, 1, 1, 1) 25%,
+    rgba(219, 76, 124, 1) 50%,
+    rgba(223, 23, 89, 1) 75%,
+    rgba(212, 0, 71, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d97904",endColorstr="#d40047",GradientType=1);
 }
