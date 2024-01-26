@@ -13,8 +13,12 @@ function PanelSelector() {
 
   return (
     <div className="flex flex-wrap sm:flex-row justify-center gap-2 items-center">
-      <IncidenceSelect incidence={incidence} setIncidence={setIncidence} />
       <TeamSelect team={team} setTeam={setTeam} />
+      <IncidenceSelect
+        incidence={incidence}
+        setIncidence={setIncidence}
+        team={team}
+      />
       <PlayerSelect team={team} player={player} setPlayer={setPlayer} />
       {incidence === "substitution" && (
         <SubstitutionSelect

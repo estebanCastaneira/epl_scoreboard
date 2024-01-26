@@ -54,12 +54,10 @@ const incidencesSlice = createSlice({
         }
       }
 
-      if (team === "home" && home.incidences.subCount < 6) {
-        console.log("tamo en home")
+      if (team === "home" && home.incidences.subCount <= 5) {
         performSubstitution(home.lineup, home.bench, player, substitution)
         home.incidences.subCount += 1
-      } else if (team === "away" && away.incidences.subCount < 6) {
-        console.log("tamo en away")
+      } else if (team === "away" && away.incidences.subCount <= 5) {
         performSubstitution(away.lineup, away.bench, player, substitution)
         away.incidences.subCount += 1
       }

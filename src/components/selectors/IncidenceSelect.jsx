@@ -1,4 +1,13 @@
-function IncidenceSelect({ incidence, setIncidence }) {
+import { useSelector } from "react-redux"
+function IncidenceSelect({ incidence, setIncidence, team }) {
+  const homeSubCount = useSelector(
+    (state) => state.incidences.home.incidences.subCount
+  )
+  const awaySubCount = useSelector(
+    (state) => state.incidences.away.incidences.subCount
+  )
+  const count = team === "home" ? homeSubCount : awaySubCount
+  console.log(count)
   const handleOnChange = (event) => {
     setIncidence(event.target.value)
   }
@@ -17,7 +26,9 @@ function IncidenceSelect({ incidence, setIncidence }) {
         <option value="score">Goal!</option>
         <option value="yellowCard">Yellow Card</option>
         <option value="redCard">Red Card</option>
-        <option value="substitution">Substitution</option>
+        <option value="substitution" disabled={count === 5}>
+          Substitution
+        </option>
       </select>
     </div>
   )
