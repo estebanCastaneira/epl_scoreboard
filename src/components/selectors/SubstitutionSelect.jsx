@@ -29,10 +29,7 @@ function Substitution({ team, substitution, setSubstitution }) {
             key={i}
             value={player}
             disabled={isSubstitution(player)}
-            className={`${
-              isSubstitution(player) &&
-              "text-grey-600 line-through cursor-not-allowed"
-            }`}
+            className={`${isSubstitution(player) && "cursor-not-allowed"}`}
           >
             {player}
           </option>

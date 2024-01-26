@@ -49,7 +49,7 @@ const incidencesSlice = createSlice({
         const playerSubIndex = bench.indexOf(substitution)
 
         if (playerIndex !== -1 && playerSubIndex !== -1) {
-          bench[playerSubIndex] = player + "*"
+          bench[playerSubIndex] = player + " *"
           lineup[playerIndex] = substitution
         }
       }
