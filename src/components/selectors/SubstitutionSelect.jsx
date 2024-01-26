@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 function Substitution({ team, substitution, setSubstitution }) {
   const [selectedTeamPlayers, setSelectedTeamPlayers] = useState([])
-  const everton = useSelector((state) => state.incidences.home.lineup.bench)
-  const liverpool = useSelector((state) => state.incidences.away.lineup.bench)
+  const everton = useSelector((state) => state.incidences.home.bench)
+  const liverpool = useSelector((state) => state.incidences.away.bench)
   useEffect(() => {
     const players = team === "home" ? everton : team === "away" ? liverpool : []
     setSelectedTeamPlayers(players)

@@ -4,8 +4,9 @@ import {
   setGoal,
   setYellowCard,
   setRedCard,
+  setSubstitutionSlice,
 } from "../../redux_config/incidencesSlice"
-import getPlayerName from "../../functions/getPlayerName"
+
 import getMinute from "../../functions/getMinute"
 
 function GoForIt({
@@ -36,38 +37,47 @@ function GoForIt({
     // if (!active) return
 
     if (incidence === "score" && team && player) {
-      const playerName = getPlayerName(player)
       const minute = getMinute(time)
       setIncidence("")
       setTeam("")
       setPlayer("")
-      dispatch(
-        setGoal({ team: team, player: playerName, time: minute, incidence })
-      )
+      dispatch(setGoal({ team, player, time: minute, incidence }))
     }
     if (incidence === "yellowCard" && team && player) {
-      const playerName = getPlayerName(player)
       const minute = getMinute(time)
       setIncidence("")
       setTeam("")
       setPlayer("")
       dispatch(
         setYellowCard({
-          team: team,
-          player: playerName,
+          team,
+          player,
           time: minute,
           incidence,
         })
       )
     }
     if (incidence === "redCard" && team && player) {
-      const playerName = getPlayerName(player)
       const minute = getMinute(time)
       setIncidence("")
       setTeam("")
       setPlayer("")
+      dispatch(setRedCard({ team, player, time: minute, incidence }))
+    }
+    if (incidence === "substitution" && team && player && substitution) {
+      const minute = getMinute(time)
+      setIncidence("")
+      setTeam("")
+      setPlayer("")
+      setSubstitution("")
       dispatch(
-        setRedCard({ team: team, player: playerName, time: minute, incidence })
+        setSubstitutionSlice({
+          team,
+          player,
+          substitution,
+          time: minute,
+          incidence,
+        })
       )
     }
   }

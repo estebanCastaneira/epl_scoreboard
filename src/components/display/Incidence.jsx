@@ -1,3 +1,4 @@
+import getPlayerName from "../../functions/getPlayerName"
 function Incidence({ inc, i }) {
   return (
     <div key={i} className="block">
@@ -7,7 +8,11 @@ function Incidence({ inc, i }) {
         }`}
       >
         <img className="w-5" src={inc.icon} alt="incident image" />
-        <p key={i}>{`${inc.time}  ${inc.player}`}</p>
+        <p>{inc.time}</p>
+        <p key={i} className={inc.sub && "text-red-500"}>
+          {getPlayerName(inc.player)}
+        </p>
+        {inc.sub && <p className="text-green-400">{getPlayerName(inc.sub)}</p>}
       </div>
     </div>
   )

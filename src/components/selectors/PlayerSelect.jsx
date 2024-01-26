@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
-import playersArray from "../../functions/playersArray"
 
 function Player({ team, player, setPlayer }) {
   const [selectedTeamPlayers, setSelectedTeamPlayers] = useState([])
@@ -9,12 +8,7 @@ function Player({ team, player, setPlayer }) {
   const liverpool = useSelector((state) => state.incidences.away.lineup)
 
   useEffect(() => {
-    const players =
-      team === ""
-        ? []
-        : team === "home"
-        ? playersArray(everton)
-        : playersArray(liverpool)
+    const players = team === "" ? [] : team === "home" ? everton : liverpool
 
     setSelectedTeamPlayers(players)
   }, [team, everton, liverpool, setPlayer])
