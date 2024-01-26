@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import getMinute from "../../functions/getMinute"
+import Incidence from "./Incidence"
 
 function Display() {
   const { globalIncidences } = useSelector((state) => state.incidences)
@@ -37,18 +38,7 @@ function Display() {
       </div>
       <div>
         {globalIncidences &&
-          globalIncidences.map((inc, i) => (
-            <div className="block" key={i}>
-              <div
-                className={`flex  items-center gap-2 my-3 relative ${
-                  inc.team === "home" ? "left-0 " : "right-0 flex-row-reverse"
-                }`}
-              >
-                <img className="w-5" src={inc.icon} alt="incident image" />
-                <p key={i}>{`${inc.time}  ${inc.player}`}</p>
-              </div>
-            </div>
-          ))}
+          globalIncidences.map((inc, i) => <Incidence key={i} inc={inc} />)}
       </div>
 
       <div

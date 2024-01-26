@@ -4,6 +4,7 @@ import playersArray from "../../functions/playersArray"
 
 function Player({ team, player, setPlayer }) {
   const [selectedTeamPlayers, setSelectedTeamPlayers] = useState([])
+
   const everton = useSelector((state) => state.incidences.home.lineup)
   const liverpool = useSelector((state) => state.incidences.away.lineup)
 
@@ -16,7 +17,6 @@ function Player({ team, player, setPlayer }) {
         : playersArray(liverpool)
 
     setSelectedTeamPlayers(players)
-    setPlayer(players[0])
   }, [team, everton, liverpool, setPlayer])
 
   const handleOnChange = (event) => {
@@ -32,8 +32,8 @@ function Player({ team, player, setPlayer }) {
         onChange={handleOnChange}
         value={player}
       >
-        <option selected disabled>
-          {team ? "Pick a Player" : "Select a Team"}
+        <option value="" selected disabled>
+          Pick a Player
         </option>
         {selectedTeamPlayers.map((player, i) => (
           <option key={i} value={player}>
