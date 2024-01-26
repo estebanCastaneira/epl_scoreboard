@@ -9,10 +9,12 @@ function Incidence({ inc, i }) {
       >
         <img className="w-5" src={inc.icon} alt="incident image" />
         <p>{inc.time}</p>
-        <p key={i} className={inc.sub && "text-red-500"}>
+        <p key={i} className={inc.substitution && "text-red-500"}>
           {getPlayerName(inc.player)}
         </p>
-        {inc.sub && <p className="text-green-400">{getPlayerName(inc.sub)}</p>}
+        {inc.substitution && (
+          <p className="text-green-400">{getPlayerName(inc.substitution)}</p>
+        )}
       </div>
     </div>
   )

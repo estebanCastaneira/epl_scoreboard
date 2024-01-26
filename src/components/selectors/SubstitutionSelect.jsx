@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
+import isSubstitution from "../../functions/isSubstitution"
 function Substitution({ team, substitution, setSubstitution }) {
   const [selectedTeamPlayers, setSelectedTeamPlayers] = useState([])
   const everton = useSelector((state) => state.incidences.home.bench)
@@ -24,7 +25,15 @@ function Substitution({ team, substitution, setSubstitution }) {
           Pick a Player
         </option>
         {selectedTeamPlayers.map((player, i) => (
-          <option key={i} value={player}>
+          <option
+            key={i}
+            value={player}
+            disabled={isSubstitution(player)}
+            className={`${
+              isSubstitution(player) &&
+              "text-grey-600 line-through cursor-not-allowed"
+            }`}
+          >
             {player}
           </option>
         ))}

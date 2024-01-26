@@ -41,12 +41,29 @@ const incidencesSlice = createSlice({
     },
     setSubstitutionSlice(state, action) {
       const { team, player, substitution, time, incidence } = action.payload
+      const { home, away } = state
       const icon = "/icons/substitution.png"
-      if (team === "home") {
-        const i = state.home.lineup.indexOf(player)
-        console.log(i)
-      } else {
+
+      const performSubstitution = (lineup, bench, player, substitution) => {
+        const playerIndex = lineup.indexOf(player)
+        const playerSubIndex = bench.indexOf(substitution)
+
+        if (playerIndex !== -1 && playerSubIndex !== -1) {
+          bench[playerSubIndex] = player + "*"
+          lineup[playerIndex] = substitution
+        }
       }
+
+      if (team === "home" && home.incidences.subCount < 6) {
+        console.log("tamo en home")
+        performSubstitution(home.lineup, home.bench, player, substitution)
+        home.incidences.subCount += 1
+      } else if (team === "away" && away.incidences.subCount < 6) {
+        console.log("tamo en away")
+        performSubstitution(away.lineup, away.bench, player, substitution)
+        away.incidences.subCount += 1
+      }
+
       state.globalIncidences.unshift({
         team,
         player,
@@ -56,6 +73,7 @@ const incidencesSlice = createSlice({
         incidence,
       })
     },
+
     resetTeams(state, action) {
       return teams
     },
