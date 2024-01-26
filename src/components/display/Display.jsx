@@ -40,7 +40,7 @@ function Display() {
           globalIncidences.map((inc, i) => (
             <div className="block" key={i}>
               <div
-                className={`flex  items-center gap-2 relative ${
+                className={`flex  items-center gap-2 my-3 relative ${
                   inc.team === "home" ? "left-0 " : "right-0 flex-row-reverse"
                 }`}
               >

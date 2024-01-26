@@ -30,6 +30,7 @@ function Player({ team, player, setPlayer }) {
         name="team"
         id="team"
         onChange={handleOnChange}
+        value={player}
       >
         <option selected disabled>
           {team ? "Pick a Player" : "Select a Team"}
