@@ -21,15 +21,15 @@ function GoForIt({
   const { time, isFirstHalf, isSecondHalf, isHalfTime } = useSelector(
     (state) => state.time
   )
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
   const dispatch = useDispatch()
   useEffect(() => {
-    if (isFirstHalf || isSecondHalf) {
-      return setActive(true)
-    }
-    if (isHalfTime) {
-      return setActive(false)
-    }
+    // if (isFirstHalf || isSecondHalf) {
+    //   return setActive(true)
+    // }
+    // if (isHalfTime) {
+    //   return setActive(false)
+    // }
   }, [isHalfTime, isFirstHalf, isSecondHalf])
 
   const handleOnClick = (event) => {
@@ -41,7 +41,9 @@ function GoForIt({
       setIncidence("")
       setTeam("")
       setPlayer("")
-      dispatch(setGoal({ team: team, player: playerName, time: minute }))
+      dispatch(
+        setGoal({ team: team, player: playerName, time: minute, incidence })
+      )
     }
     if (incidence === "yellowCard" && team && player) {
       const playerName = getPlayerName(player)
@@ -49,7 +51,14 @@ function GoForIt({
       setIncidence("")
       setTeam("")
       setPlayer("")
-      dispatch(setYellowCard({ team: team, player: playerName, time: minute }))
+      dispatch(
+        setYellowCard({
+          team: team,
+          player: playerName,
+          time: minute,
+          incidence,
+        })
+      )
     }
     if (incidence === "redCard" && team && player) {
       const playerName = getPlayerName(player)
@@ -57,7 +66,9 @@ function GoForIt({
       setIncidence("")
       setTeam("")
       setPlayer("")
-      dispatch(setRedCard({ team: team, player: playerName, time: minute }))
+      dispatch(
+        setRedCard({ team: team, player: playerName, time: minute, incidence })
+      )
     }
   }
 

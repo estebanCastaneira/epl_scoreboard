@@ -12,7 +12,7 @@ function App() {
       <div className="app font-radikal">
         <div className="flex flex-col items-center gap-9 my-10">
           <Scoreboard />
-          <div className="flex flex-col justify-center items-center gap-3 sm:flex-row">
+          <div className="flex flex-col justify-center items-center mt-14 gap-3 sm:flex-row">
             <StartButton />
             <ResetButton />
             <InjuryTimeSelect />

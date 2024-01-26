@@ -67,5 +67,6 @@ const teams = {
       substitutions: [],
     },
   },
+  globalIncidences: [],
 }
 export default teams

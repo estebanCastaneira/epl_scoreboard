@@ -16,7 +16,8 @@ function Player({ team, player, setPlayer }) {
         : playersArray(liverpool)
 
     setSelectedTeamPlayers(players)
-  }, [team, everton, liverpool])
+    setPlayer(players[0])
+  }, [team, everton, liverpool, setPlayer])
 
   const handleOnChange = (event) => {
     setPlayer(event.target.value)

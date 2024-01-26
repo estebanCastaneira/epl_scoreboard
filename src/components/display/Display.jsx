@@ -3,31 +3,27 @@ import { useSelector } from "react-redux"
 import getMinute from "../../functions/getMinute"
 
 function Display() {
-  const eveIncidences = useSelector((state) => state.incidences.home.incidences)
-  const livIncidences = useSelector((state) => state.incidences.away.incidences)
+  const { globalIncidences } = useSelector((state) => state.incidences)
   const { isStarted, isFinished, time, injuryTime } = useSelector(
     (state) => state.time
   )
 
-  const [homeInc, setHomeInc] = useState([])
-  const [awayInc, setAwayInc] = useState([])
   const [minutes, setMinutes] = useState()
 
   useEffect(() => {
-    setHomeInc(eveIncidences)
-    setAwayInc(livIncidences)
     if (isFinished) {
       setMinutes(getMinute(time, injuryTime))
     }
-  }, [eveIncidences, livIncidences, isFinished, time, injuryTime])
+  }, [isFinished, time, injuryTime])
+  console.log(globalIncidences)
   return (
     <div
-      className={`h-[38vh] sm:h-[50vh] w-[90%] sm:w-[80%]  px-3 flex justify-around bg-white bg-blur-lg bg-opacity-20 rounded-lg overscroll-y-contain overflow-auto relative text-white text-xs sm:text-sm ${
+      className={`h-[38vh] sm:h-[50vh] w-[90%] sm:w-[80%]  px-3 bg-white bg-blur-lg bg-opacity-20 rounded-lg overscroll-y-contain overflow-auto relative text-white text-xs sm:text-sm ${
         isStarted ? "pt-10" : "pt-3"
       } ${isFinished ? "pb-10" : "pb-3"}`}
     >
       <div
-        className={`flex flex-col items-center z-10 justify-center absolute top-0 ${
+        className={`flex flex-col items-center z-10 justify-center absolute top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
           !isStarted && "hidden"
         }`}
       >
@@ -39,19 +35,24 @@ function Display() {
         />
         <p>0' Match Start!</p>
       </div>
+      <div>
+        {globalIncidences &&
+          globalIncidences.map((inc, i) => (
+            <div className="block" key={i}>
+              <div
+                className={`flex  items-center gap-2 relative ${
+                  inc.team === "home" ? "left-0 " : "right-0 flex-row-reverse"
+                }`}
+              >
+                <img className="w-5" src={inc.icon} alt="incident image" />
+                <p key={i}>{`${inc.time}  ${inc.player}`}</p>
+              </div>
+            </div>
+          ))}
+      </div>
 
-      <div className="border-r border-slate-200 w-[100%]">
-        {/* {homeInc.map((inc, i) => (
-          <p key={i}>inc</p>
-        ))} */}
-      </div>
-      <div className="w-[100%]">
-        {/* {awayInc.map((inc, i) => (
-          <p key={i}>inc</p>
-        ))} */}
-      </div>
       <div
-        className={`flex flex-col items-center z-10 justify-center absolute bottom-0 ${
+        className={`flex flex-col items-center z-10 justify-center absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 bottom-0 ${
           !isFinished && "hidden"
         }`}
       >
