@@ -18,49 +18,6 @@ const incidencesSlice = createSlice({
       }
       state.globalIncidences.unshift({ team, player, time, icon, incidence })
     },
-    // setYellowCard(state, action) {
-    //   const { team, player, time, incidence } = action.payload
-    //   const iconY = "/icons/yellow-card.png"
-    //   const iconR = "/icons/second-yellow.png"
-    //   if (team === "home") {
-    //     if (state.home.incidences.yellowCard.includes(player)) {
-    //       state.globalIncidences.unshift({
-    //         team,
-    //         player,
-    //         time,
-    //         icon: iconR,
-    //         incidence,
-    //       })
-    //     }
-
-    //     state.home.incidences.yellowCard.push(player)
-    //     state.globalIncidences.unshift({
-    //       team,
-    //       player,
-    //       time,
-    //       icon: iconY,
-    //       incidence,
-    //     })
-    //   } else {
-    //     if (state.away.incidences.yellowCard.includes(player)) {
-    //       state.globalIncidences.unshift({
-    //         team,
-    //         player,
-    //         time,
-    //         icon: iconR,
-    //         incidence,
-    //       })
-    //     }
-    //     state.away.incidences.yellowCard.push(player)
-    //     state.globalIncidences.unshift({
-    //       team,
-    //       player,
-    //       time,
-    //       icon: iconY,
-    //       incidence,
-    //     })
-    //   }
-    // },
     setYellowCard(state, action) {
       const { team, player, time, incidence } = action.payload
       const iconY = "/icons/yellow-card.png"
@@ -89,16 +46,16 @@ const incidencesSlice = createSlice({
         })
       }
     },
-
     setRedCard(state, action) {
       const { team, player, time, incidence } = action.payload
       const icon = "/icons/red-card.png"
+      const teamIncidences = team === "home" ? state.home : state.away
+      const playerIndex = teamIncidences.lineup.indexOf(player)
 
-      if (team === "home") {
-        state.home.incidences.redCard.push({ time, player, icon })
-      } else {
-        state.away.incidences.redCard.push({ time, player, icon })
-      }
+      teamIncidences.lineup[playerIndex] = player + " *"
+
+      teamIncidences.incidences.redCard.push({ time, player, icon })
+
       state.globalIncidences.unshift({ team, player, time, icon, incidence })
     },
     setSubstitutionSlice(state, action) {
