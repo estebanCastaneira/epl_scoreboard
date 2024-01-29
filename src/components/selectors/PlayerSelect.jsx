@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
+import isUnavailable from "../../functions/isUnavailable"
 
 function Player({ team, player, setPlayer }) {
   const [selectedTeamPlayers, setSelectedTeamPlayers] = useState([])
@@ -30,7 +31,7 @@ function Player({ team, player, setPlayer }) {
           Pick a Player
         </option>
         {selectedTeamPlayers.map((player, i) => (
-          <option key={i} value={player}>
+          <option key={i} value={player} disabled={isUnavailable(player)}>
             {player}
           </option>
         ))}

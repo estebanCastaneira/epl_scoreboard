@@ -10,7 +10,6 @@ function IncidenceSelect({ incidence, setIncidence, team }) {
   )
   useEffect(() => {
     const counter = team === "home" ? homeSubCount : awaySubCount
-    console.log(counter)
     setCount(counter)
   }, [team, awaySubCount, homeSubCount])
 
