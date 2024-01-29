@@ -6,9 +6,6 @@
   --violet: #45013e;
   --green: #79bf79;
 }
-* {
-  transition: all 1.5s;
-}
 .app {
   background-image: url("/img/background.png");
   height: 100vh;
