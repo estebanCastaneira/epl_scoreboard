@@ -26,7 +26,7 @@ const teams = {
     ],
     incidences: {
       score: 0,
-      subCount: 0,
+      subsCount: 0,
       goals: [],
       yellowCard: [],
       redCard: [],
@@ -60,7 +60,7 @@ const teams = {
     ],
     incidences: {
       score: 0,
-      subCount: 0,
+      subsCount: 0,
       goals: [],
       yellowCard: [],
       redCard: [],

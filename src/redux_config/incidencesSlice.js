@@ -54,12 +54,12 @@ const incidencesSlice = createSlice({
         }
       }
 
-      if (team === "home" && home.incidences.subCount <= 5) {
+      if (team === "home" && home.incidences.subsCount <= 5) {
         performSubstitution(home.lineup, home.bench, player, substitution)
-        home.incidences.subCount += 1
-      } else if (team === "away" && away.incidences.subCount <= 5) {
+        home.incidences.subsCount += 1
+      } else if (team === "away" && away.incidences.subsCount <= 5) {
         performSubstitution(away.lineup, away.bench, player, substitution)
-        away.incidences.subCount += 1
+        away.incidences.subsCount += 1
       }
 
       state.globalIncidences.unshift({

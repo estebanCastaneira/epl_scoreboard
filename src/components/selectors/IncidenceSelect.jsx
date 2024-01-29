@@ -1,13 +1,19 @@
 import { useSelector } from "react-redux"
+import { useEffect, useState } from "react"
 function IncidenceSelect({ incidence, setIncidence, team }) {
+  const [count, setCount] = useState(0)
   const homeSubCount = useSelector(
-    (state) => state.incidences.home.incidences.subCount
+    (state) => state.incidences.home.incidences.subsCount
   )
   const awaySubCount = useSelector(
-    (state) => state.incidences.away.incidences.subCount
+    (state) => state.incidences.away.incidences.subsCount
   )
-  const count = team === "home" ? homeSubCount : awaySubCount
-  console.log(count)
+  useEffect(() => {
+    const counter = team === "home" ? homeSubCount : awaySubCount
+    console.log(counter)
+    setCount(counter)
+  }, [team, awaySubCount, homeSubCount])
+
   const handleOnChange = (event) => {
     setIncidence(event.target.value)
   }
