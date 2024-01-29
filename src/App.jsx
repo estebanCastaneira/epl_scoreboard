@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div className="app font-radikal">
-        <div className="flex flex-col justify-around items-center gap-9 px-10">
+        <div className="flex flex-col justify-around items-center gap-9">
           <Scoreboard />
           <div className="flex flex-col justify-center items-center gap-3 mt-2 sm:flex-row">
             <StartButton />

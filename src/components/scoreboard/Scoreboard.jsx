@@ -3,7 +3,7 @@ import TeamsContainer from "../teams/TeamsContainer"
 import InjuryTime from "../timer/InjuryTime"
 function Scoreboard() {
   return (
-    <div className="flex flex-col items-center justify-center  md:w-[48%] w-[100%]">
+    <div className="flex flex-col items-center justify-center w-[100%] pointer-events-none">
       <TeamsContainer />
       <Timer />
       <InjuryTime />
