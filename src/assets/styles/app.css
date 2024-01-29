@@ -11,10 +11,11 @@
 }
 .app {
   background-image: url("/img/background.png");
-  object-fit: cover cover;
-  padding: 2.5rem 0;
+  height: 100vh;
   z-index: -100;
-  filter: brightness(80%);
+  display: flex;
+  padding: 3rem 0;
+  justify-content: center;
 }
 p {
   margin: 0;
