@@ -19,7 +19,7 @@ function Display() {
 
   return (
     <div
-      className={`h-[38vh] sm:h-[50vh] w-[90%] sm:w-[80%]  px-3 bg-white bg-blur-lg bg-opacity-20 rounded-lg overscroll-y-contain overflow-auto relative text-white text-xs sm:text-sm ${
+      className={`h-[900px] sm:h-100 w-[90%] px-3 bg-white bg-blur-lg bg-opacity-20 rounded-lg overscroll-y-contain overflow-auto relative text-white text-xs sm:text-sm ${
         isStarted ? "pt-10" : "pt-3"
       } ${isFinished ? "pb-10" : "pb-3"}`}
     >

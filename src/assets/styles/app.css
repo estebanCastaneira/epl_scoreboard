@@ -6,14 +6,7 @@
   --violet: #45013e;
   --green: #79bf79;
 }
-.app {
-  background-image: url("/img/background.png");
-  height: 100vh;
-  z-index: -100;
-  display: flex;
-  padding: 3rem 0;
-  justify-content: center;
-}
+
 p {
   margin: 0;
   line-height: normal;
@@ -24,6 +17,15 @@ option {
 }
 label {
   color: white;
+}
+/*** APP ***/
+.app {
+  background-image: url("/img/background.png");
+  height: 100vh;
+  z-index: -100;
+  display: flex;
+  padding: 3rem 0;
+  justify-content: center;
 }
 /*** TIMER ***/
 .timer {

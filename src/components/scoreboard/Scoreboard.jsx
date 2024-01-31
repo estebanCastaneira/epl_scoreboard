@@ -1,6 +1,6 @@
 import Timer from "../timer/Timer"
 import TeamsContainer from "../teams/TeamsContainer"
-import InjuryTime from "../timer/InjuryTime"
+import InjuryTime from "./InjuryTime"
 import Notification from "./Notification"
 function Scoreboard() {
   return (

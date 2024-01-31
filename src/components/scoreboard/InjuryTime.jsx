@@ -6,7 +6,7 @@ function InjuryTime() {
   const [visible, setVisible] = useState(false)
   const injuryTimeVariant = {
     hidden: { opacity: 0, y: -34 },
-    visible: { opacity: 1, y: 0, transition: { type: "tween", delay: 0.3 } },
+    visible: { opacity: 1, y: 0, transition: { type: "smooth", delay: 0.2 } },
   }
   useEffect(() => {
     injuryTime > 0 ? setVisible(true) : setVisible(false)

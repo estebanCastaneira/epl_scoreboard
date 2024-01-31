@@ -9,17 +9,15 @@ import InjuryTimeSelect from "./components/selectors/InjuryTimeSelect"
 function App() {
   return (
     <>
-      <div className="app font-radikal">
-        <div className="flex flex-col justify-around items-center gap-9 px-2">
-          <Scoreboard />
-          <div className="flex flex-col justify-center items-center gap-3 mt-2 sm:flex-row">
-            <StartButton />
-            <ResetButton />
-            <InjuryTimeSelect />
-          </div>
-          <Display />
-          <PanelSelector />
+      <div className="app font-radikal flex flex-col gap-5 items-center px-2">
+        <Scoreboard />
+        <div className="flex flex-col justify-center items-center gap-3 mt-2 sm:flex-row">
+          <StartButton />
+          <ResetButton />
+          <InjuryTimeSelect />
         </div>
+        <Display />
+        <PanelSelector />
       </div>
     </>
   )

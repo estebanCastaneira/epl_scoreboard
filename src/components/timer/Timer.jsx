@@ -28,7 +28,7 @@ function Timer() {
 
   return (
     <div
-      className={`timer w-44 h-10 flex justify-center items-center ${
+      className={`timer w-44 h-10 flex justify-center items-center relative z-10 ${
         injuryTime ? "rounded-none" : "rounded-b-2xl"
       }`}
     >
