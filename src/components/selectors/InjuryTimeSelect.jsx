@@ -22,7 +22,6 @@ function InjuryTimeSelect() {
     const num = Number(event.target.value)
     setAddition(num)
     dispatch(setInjuryTime(num))
-    console.log(addition)
   }
   return (
     <div className={`flex ${!available && "hidden"}`}>
