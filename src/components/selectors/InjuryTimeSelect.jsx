@@ -9,8 +9,7 @@ function InjuryTimeSelect() {
   const [addition, setAddition] = useState()
   useEffect(() => {
     setAddition("")
-    setAvailable(false)
-  }, [])
+  }, [available])
   useEffect(() => {
     if ((time > 2100 && time < 2700) || (time > 4500 && time < 5400)) {
       setAvailable(true)
