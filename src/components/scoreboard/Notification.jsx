@@ -24,7 +24,7 @@ function Notification() {
   }, [globalIncidences])
   return (
     <motion.div>
-      <div>
+      <div className="hidden">
         <h2>Esto es Nacional</h2>
       </div>
     </motion.div>

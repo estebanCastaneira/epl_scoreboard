@@ -6,6 +6,11 @@ function InjuryTimeSelect() {
   const { injuryTime, time } = useSelector((state) => state.time)
 
   const [available, setAvailable] = useState(false)
+  const [addition, setAddition] = useState()
+  useEffect(() => {
+    setAddition("")
+    setAvailable(false)
+  }, [])
   useEffect(() => {
     if ((time > 2100 && time < 2700) || (time > 4500 && time < 5400)) {
       setAvailable(true)
@@ -15,8 +20,10 @@ function InjuryTimeSelect() {
   }, [time])
 
   const handleOnChange = (event) => {
-    const addition = Number(event.target.value)
-    dispatch(setInjuryTime(addition))
+    const num = Number(event.target.value)
+    setAddition(num)
+    dispatch(setInjuryTime(num))
+    console.log(addition)
   }
   return (
     <div className={`flex ${!available && "hidden"}`}>
@@ -26,10 +33,12 @@ function InjuryTimeSelect() {
         id="injuryTime"
         onChange={handleOnChange}
         disabled={injuryTime}
+        value={addition}
       >
         <option value="" selected disabled>
           Injury Time
         </option>
+        <option value="0">0'</option>
         <option value="60">1'</option>
         <option value="120">2'</option>
         <option value="180">3'</option>
