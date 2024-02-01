@@ -11,7 +11,9 @@ const animationSlice = createSlice({
   },
   reducers: {
     setGoalAnimation(state, action) {},
-    setInjuryTime(state, action) {},
+    setInjuryTimeAnimation(state, action) {
+      state.injuryTime = action.payload
+    },
     setRedCardAnimation(state, action) {},
     setSubstitutionAnimation(state, action) {},
     setYellowCardAnimation(state, action) {},
@@ -19,6 +21,7 @@ const animationSlice = createSlice({
 })
 export const {
   setGoalAnimation,
+  setInjuryTimeAnimation,
   setSubstitutionAnimation,
   setYellowCardAnimation,
   setRedCardAnimation,

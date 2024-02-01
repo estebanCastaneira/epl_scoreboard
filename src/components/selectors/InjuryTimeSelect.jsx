@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import { setInjuryTime } from "../../redux_config/timeSlice"
+import { setInjuryTimeAnimation } from "../../redux_config/animationSlice"
 function InjuryTimeSelect() {
   const dispatch = useDispatch()
   const { injuryTime, time } = useSelector((state) => state.time)
@@ -22,6 +23,7 @@ function InjuryTimeSelect() {
     const num = Number(event.target.value)
     setAddition(num)
     dispatch(setInjuryTime(num))
+    dispatch(setInjuryTimeAnimation(true))
   }
   return (
     <div className={`flex ${!available && "hidden"}`}>
