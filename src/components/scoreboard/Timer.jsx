@@ -29,10 +29,10 @@ function Timer() {
   return (
     <div
       className={`timer w-44 h-10 flex justify-center items-center relative z-10 ${
-        injuryTime ? "rounded-none" : "rounded-b-2xl"
+        injuryTime ? "rounded-none" : "rounded-b-md"
       }`}
     >
-      <p className="text-white text-3xl font-bold tracking-widest time">
+      <p className="text-white text-3xl custom:text-4xl font-bold tracking-widest time">
         {formatTime(time)}
       </p>
     </div>

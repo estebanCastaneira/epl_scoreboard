@@ -37,8 +37,9 @@ function Notification() {
       variants={notificationVariant}
       initial="hidden"
       animate="visible"
+      className="hidden"
     >
-      <div className="hidden px-4 py-2 bg-amber-100 z-[-10] rounded-b-xl sm:flex items-center gap-4  ">
+      <div className="px-4 py-2 bg-amber-100 z-[-10] rounded-b-xl sm:flex items-center gap-4  ">
         <img className="w-8" src={redCard} alt="incidence icon" />
         <p>Esto es Nacional</p>
       </div>

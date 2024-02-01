@@ -11,7 +11,7 @@ function TeamsContainer() {
         name={"eve"}
         score={incidences.home.incidences.score}
         home={true}
-        bgColor={"to-blue-950 via-blue-600"}
+        bgColor={"from-blue-700 to-blue-950"}
       />
 
       <LionLogo />
@@ -20,7 +20,7 @@ function TeamsContainer() {
         name={"liv"}
         score={incidences.away.incidences.score}
         home={false}
-        bgColor={"to-red-950 via-red-600"}
+        bgColor={"from-red-700 to-red-950"}
       />
     </div>
   )

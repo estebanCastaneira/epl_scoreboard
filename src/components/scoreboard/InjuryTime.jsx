@@ -17,7 +17,7 @@ function InjuryTime() {
       variants={injuryTimeVariant}
       initial="hidden"
       animate={visible ? "visible" : ""}
-      className="injury-time rounded-b-2xl w-44 h-10 flex justify-center items-center z[-1]"
+      className="injury-time rounded-b-sm w-44 h-10 flex justify-center items-center z[-1]"
     >
       <p className="text-white text-2xl font-bold tracking-widest">
         +{injuryTime && injuryTime / 60}'

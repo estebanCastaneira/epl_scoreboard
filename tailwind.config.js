@@ -5,7 +5,7 @@ export default {
     extend: {
       fontSize: { score: "14rem" },
       screens: {
-        custom: "370px",
+        custom: "440px",
       },
     },
     fontFamily: {
