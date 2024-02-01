@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { resetTimer } from "../../redux_config/timeSlice"
 import { useEffect, useState } from "react"
 import { resetTeams } from "../../redux_config/incidencesSlice"
+import { setInjuryTimeAnimation } from "../../redux_config/animationSlice"
 function ResetButton() {
   const { isFinished } = useSelector((state) => state.time)
   const dispatch = useDispatch()
@@ -10,6 +11,7 @@ function ResetButton() {
   const handleResetTime = () => {
     dispatch(resetTimer())
     dispatch(resetTeams())
+    dispatch(setInjuryTimeAnimation(false))
   }
   useEffect(() => {
     setBtnState(isFinished)
