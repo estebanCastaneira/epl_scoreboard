@@ -2,7 +2,7 @@ function Team({ name, score, bgColor, home }) {
   return (
     <div
       className={`px-2 ${
-        home ? "bg-gradient-to-r rounded-l-sm" : "bg-gradient-to-l rounded-r-sm"
+        home ? "bg-gradient-to-r rounded-l-md" : "bg-gradient-to-l rounded-r-md"
       }  ${bgColor} flex items-center justify-end w-[100%] text-white relative 
       ${home && "flex-row-reverse"} h-9 custom:h-11`}
     >

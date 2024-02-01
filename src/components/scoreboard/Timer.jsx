@@ -29,7 +29,7 @@ function Timer() {
   return (
     <div
       className={`timer w-44 h-10 flex justify-center items-center relative z-10 ${
-        injuryTime ? "rounded-none" : "rounded-b-md"
+        injuryTime ? "rounded-none" : "rounded-b-lg"
       }`}
     >
       <p className="text-white text-3xl custom:text-4xl font-bold tracking-widest time">

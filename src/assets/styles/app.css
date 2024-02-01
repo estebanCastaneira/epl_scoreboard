@@ -35,30 +35,30 @@ label {
   margin-top: 0.5rem;
 }
 .injury-time {
-  background: rgb(217, 121, 4);
+  background: rgb(252, 68, 0);
   background: -moz-linear-gradient(
     98deg,
-    rgba(217, 121, 4, 1) 0%,
-    rgba(219, 1, 1, 1) 25%,
-    rgba(219, 76, 124, 1) 50%,
-    rgba(223, 23, 89, 1) 75%,
-    rgba(212, 0, 71, 1) 100%
+    rgba(252, 68, 0, 1) 0%,
+    rgba(253, 0, 0, 1) 25%,
+    rgba(253, 0, 227, 1) 50%,
+    rgba(204, 0, 247, 1) 75%,
+    rgba(202, 2, 246, 1) 100%
   );
   background: -webkit-linear-gradient(
     98deg,
-    rgba(217, 121, 4, 1) 0%,
-    rgba(219, 1, 1, 1) 25%,
-    rgba(219, 76, 124, 1) 50%,
-    rgba(223, 23, 89, 1) 75%,
-    rgba(212, 0, 71, 1) 100%
+    rgba(252, 68, 0, 1) 0%,
+    rgba(253, 0, 0, 1) 25%,
+    rgba(253, 0, 227, 1) 50%,
+    rgba(204, 0, 247, 1) 75%,
+    rgba(202, 2, 246, 1) 100%
   );
   background: linear-gradient(
     98deg,
-    rgba(217, 121, 4, 1) 0%,
-    rgba(219, 1, 1, 1) 25%,
-    rgba(219, 76, 124, 1) 50%,
-    rgba(223, 23, 89, 1) 75%,
-    rgba(212, 0, 71, 1) 100%
+    rgba(252, 68, 0, 1) 0%,
+    rgba(253, 0, 0, 1) 25%,
+    rgba(253, 0, 227, 1) 50%,
+    rgba(204, 0, 247, 1) 75%,
+    rgba(202, 2, 246, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d97904",endColorstr="#d40047",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fc4400",endColorstr="#ca02f6",GradientType=1);
 }
