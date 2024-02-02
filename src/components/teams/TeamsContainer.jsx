@@ -6,7 +6,7 @@ function TeamsContainer() {
   const incidences = useSelector((state) => state.incidences)
 
   return (
-    <div className="flex w-[100%] mx-auto my-0 relative z-30">
+    <div className="flex w-[100%] mx-auto my-0 relative z-30 transition-all">
       <Home
         name={"eve"}
         score={incidences.home.incidences.score}
