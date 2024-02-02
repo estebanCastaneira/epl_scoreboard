@@ -12,7 +12,7 @@ export const addedTimeTextVariant = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "smooth", delay: 0.3, duration: 0.4 },
+    transition: { type: "smooth", delay: 0.3, duration: 0.5 },
   },
   exit: { x: -200, opacity: 0 },
   styles: { overflow: "hidden", whiteSpace: "nowrap" },
@@ -23,7 +23,7 @@ export const addedTimeNumberVariant = {
   visible: {
     x: -10,
     opacity: 1,
-    transition: { type: "smooth", delay: 0.3, duration: 0.4 },
+    transition: { type: "smooth", delay: 0.3, duration: 0.5 },
   },
   exit: { x: 300, opacity: 0 },
   styles: { overflow: "hidden", whiteSpace: "nowrap" },
@@ -35,7 +35,7 @@ export const teamDisappear = (home, animateInjTime) => {
     visible: {
       x: home ? -80 : 80,
       opacity: 0,
-      transition: { type: "smooth", delay: 0.3, duration: 0.4 },
+      transition: { type: "smooth", delay: 0.3, duration: 0.5 },
     },
     exit: { x: 0 },
     style: { overflow: "hidden", whiteSpace: "nowrap" },
@@ -49,7 +49,7 @@ export const scoreDisappear = (home, animateInjTime) => {
     visible: {
       x: home ? 50 : -50,
       opacity: 0,
-      transition: { type: "smooth", delay: 0.3, duration: 0.4 },
+      transition: { type: "smooth", delay: 0.3, duration: 0.5 },
     },
     exit: { x: 0, opacity: 1 },
     style: { overflow: "hidden", whiteSpace: "nowrap" },
