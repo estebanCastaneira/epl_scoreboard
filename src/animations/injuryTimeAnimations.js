@@ -7,38 +7,52 @@ export const showVariant = {
   },
 }
 
-export const addedTimeVariant = {
-  hidden: { x: -30 },
-  visible: { x: 0, transition: { type: "smooth", delay: 0.3, duration: 0.4 } },
-  style: { overflow: "hidden", whiteSpace: "nowrap" },
+export const addedTimeTextVariant = {
+  hidden: { x: -200, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "smooth", delay: 0.3, duration: 0.4 },
+  },
+  exit: { x: -200, opacity: 0 },
+  styles: { overflow: "hidden", whiteSpace: "nowrap" },
 }
 
 export const addedTimeNumberVariant = {
-  hidden: { x: -30 },
-  visible: { x: 0, transition: { type: "smooth", delay: 0.3, duration: 0.4 } },
-  style: { overflow: "hidden", whiteSpace: "nowrap" },
+  hidden: { x: 300, opacity: 0 },
+  visible: {
+    x: -10,
+    opacity: 1,
+    transition: { type: "smooth", delay: 0.3, duration: 0.4 },
+  },
+  exit: { x: 300, opacity: 0 },
+  styles: { overflow: "hidden", whiteSpace: "nowrap" },
 }
 
-export const teamDissapear = (home) => {
+export const teamDisappear = (home, animateInjTime) => {
   const animation = {
-    hidden: { x: -30 },
+    hidden: { x: 0 },
     visible: {
-      x: 0,
+      x: home ? -80 : 80,
+      opacity: 0,
       transition: { type: "smooth", delay: 0.3, duration: 0.4 },
     },
+    exit: { x: 0 },
     style: { overflow: "hidden", whiteSpace: "nowrap" },
   }
-  return animation
+  if (animateInjTime) return animation
 }
 
-export const scoreDissaper = (home) => {
+export const scoreDisappear = (home, animateInjTime) => {
   const animation = {
-    hidden: { x: -30 },
+    hidden: { x: 0, opacity: 1 },
     visible: {
-      x: 0,
+      x: home ? 50 : -50,
+      opacity: 0,
       transition: { type: "smooth", delay: 0.3, duration: 0.4 },
     },
+    exit: { x: 0, opacity: 1 },
     style: { overflow: "hidden", whiteSpace: "nowrap" },
   }
-  return animation
+  if (animateInjTime) return animation
 }

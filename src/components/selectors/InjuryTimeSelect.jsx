@@ -15,7 +15,7 @@ function InjuryTimeSelect() {
     if ((time > 2100 && time < 2700) || (time > 4500 && time < 5400)) {
       setAvailable(true)
     } else {
-      setAvailable(false)
+      setAvailable(true)
     }
   }, [time])
 
