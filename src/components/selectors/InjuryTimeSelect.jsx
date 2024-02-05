@@ -3,14 +3,24 @@ import { useEffect, useState } from "react"
 import { setInjuryTime } from "../../redux_config/timeSlice"
 import { setInjuryTimeAnimation } from "../../redux_config/animationSlice"
 function InjuryTimeSelect() {
-  const dispatch = useDispatch()
   const { injuryTime, time } = useSelector((state) => state.time)
+  const animateInjTime = useSelector((state) => state.animation.injuryTime)
+  const dispatch = useDispatch()
 
   const [available, setAvailable] = useState(false)
   const [addition, setAddition] = useState()
+
+  const handleOnChange = (event) => {
+    const num = Number(event.target.value)
+    setAddition(num)
+    dispatch(setInjuryTime(num))
+    dispatch(setInjuryTimeAnimation(true))
+  }
+
   useEffect(() => {
     setAddition("")
   }, [available])
+
   useEffect(() => {
     if ((time > 2100 && time < 2700) || (time > 4500 && time < 5400)) {
       setAvailable(true)
@@ -19,12 +29,16 @@ function InjuryTimeSelect() {
     }
   }, [time])
 
-  const handleOnChange = (event) => {
-    const num = Number(event.target.value)
-    setAddition(num)
-    dispatch(setInjuryTime(num))
-    dispatch(setInjuryTimeAnimation(true))
-  }
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      dispatch(setInjuryTimeAnimation(false))
+    }, 4000)
+
+    return () => {
+      clearTimeout(timeOut)
+    }
+  }, [dispatch, animateInjTime])
+
   return (
     <div className={`flex ${!available && "hidden"}`}>
       <select

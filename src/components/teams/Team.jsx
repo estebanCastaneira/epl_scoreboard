@@ -1,5 +1,4 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { motion } from "framer-motion"
 import {
   addedTimeTextVariant,
@@ -12,16 +11,7 @@ import { setInjuryTimeAnimation } from "../../redux_config/animationSlice"
 function Team({ name, score, bgColor, home }) {
   const animateInjTime = useSelector((state) => state.animation.injuryTime)
   const { injuryTime } = useSelector((state) => state.time)
-  const dispatch = useDispatch()
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
-      dispatch(setInjuryTimeAnimation(false))
-    }, 4000)
 
-    return () => {
-      clearTimeout(timeOut)
-    }
-  }, [dispatch, animateInjTime])
   return (
     <div
       className={`px-2 flex items-center justify-end w-[100%] text-white relative 
@@ -36,7 +26,8 @@ function Team({ name, score, bgColor, home }) {
           variants={addedTimeTextVariant}
           initial="hidden"
           animate="visible"
-          onAnimationComplete={animateInjTime}
+          exit="exit"
+          // onAnimationComplete={animateInjTime}
           className={`md:text-4xl sm:text-xl text-sm font-bold tracking-widest top-3 absolute overflow-hidden ${
             home ? "left-6" : "right-6"
           }`}
@@ -49,7 +40,8 @@ function Team({ name, score, bgColor, home }) {
           variants={addedTimeNumberVariant}
           initial="hidden"
           animate="visible"
-          onAnimationComplete={animateInjTime}
+          exit="exit"
+          // onAnimationComplete={animateInjTime}
           className={`${
             home ? "left-6" : "right-6"
           } custom:text-7xl text-6xl font-bold absolute z-50 custom:bottom-[-1.1rem] bottom-[-0.95rem]`}
@@ -61,7 +53,8 @@ function Team({ name, score, bgColor, home }) {
         variants={scoreDisappear(home, animateInjTime)}
         initial="hidden"
         animate="visible"
-        onAnimationComplete={animateInjTime}
+        exit="exit"
+        // onAnimationComplete={animateInjTime}
         className={`${
           home ? "right-10" : "left-10"
         } custom:text-7xl text-6xl font-bold absolute z-50 custom:bottom-[-1.1rem] bottom-[-0.95rem]`}
@@ -72,7 +65,8 @@ function Team({ name, score, bgColor, home }) {
         variants={teamDisappear(home, animateInjTime)}
         initial="hidden"
         animate="visible"
-        onAnimationComplete={animateInjTime}
+        exit="exit"
+        // onAnimationComplete={animateInjTime}
         className={`custom:text-5xl text-3xl font-bold uppercase tracking-widest top-1 absolute ${
           home ? "left-6" : "right-6"
         }`}

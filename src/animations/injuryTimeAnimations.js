@@ -1,4 +1,4 @@
-export const showVariant = {
+export const showInjuryTime = {
   hidden: { opacity: 0, y: -34 },
   visible: {
     opacity: 1,
@@ -14,8 +14,7 @@ export const addedTimeTextVariant = {
     opacity: 1,
     transition: { type: "smooth", delay: 0.3, duration: 0.5 },
   },
-  exit: { x: -200, opacity: 0 },
-  styles: { overflow: "hidden", whiteSpace: "nowrap" },
+  exit: { x: -200, opacity: 0, transition: { type: "smooth", duration: 0.5 } },
 }
 
 export const addedTimeNumberVariant = {
@@ -25,8 +24,7 @@ export const addedTimeNumberVariant = {
     opacity: 1,
     transition: { type: "smooth", delay: 0.3, duration: 0.5 },
   },
-  exit: { x: 300, opacity: 0 },
-  styles: { overflow: "hidden", whiteSpace: "nowrap" },
+  exit: { x: 300, opacity: 0, transition: { type: "smooth", duration: 0.5 } },
 }
 
 export const teamDisappear = (home, animateInjTime) => {
@@ -37,8 +35,7 @@ export const teamDisappear = (home, animateInjTime) => {
       opacity: 0,
       transition: { type: "smooth", delay: 0.3, duration: 0.5 },
     },
-    exit: { x: 0 },
-    style: { overflow: "hidden", whiteSpace: "nowrap" },
+    exit: { x: 0, transition: { type: "smooth", duration: 0.5 } },
   }
   if (animateInjTime) return animation
 }
@@ -51,8 +48,7 @@ export const scoreDisappear = (home, animateInjTime) => {
       opacity: 0,
       transition: { type: "smooth", delay: 0.3, duration: 0.5 },
     },
-    exit: { x: 0, opacity: 1 },
-    style: { overflow: "hidden", whiteSpace: "nowrap" },
+    exit: { x: 0, opacity: 1, transition: { type: "smooth", duration: 0.5 } },
   }
   if (animateInjTime) return animation
 }

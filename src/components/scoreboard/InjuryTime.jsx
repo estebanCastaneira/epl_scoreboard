@@ -1,16 +1,15 @@
 import { useSelector } from "react-redux"
 import { motion } from "framer-motion"
-import { showVariant } from "../../animations/injuryTimeAnimations"
+import { showInjuryTime } from "../../animations/injuryTimeAnimations"
 
 function InjuryTime() {
   const { injuryTime } = useSelector((state) => state.time)
-  const animateInjTime = useSelector((state) => state.animation.injuryTime)
 
   return (
     <motion.div
-      variants={showVariant}
+      variants={showInjuryTime}
       initial="hidden"
-      animate={animateInjTime ? "visible" : ""}
+      animate={injuryTime > 0 ? "visible" : ""}
       className="injury-time rounded-b-lg w-44 h-10 flex justify-center items-center z[-1]"
     >
       <p className="text-white text-2xl font-bold tracking-widest">
