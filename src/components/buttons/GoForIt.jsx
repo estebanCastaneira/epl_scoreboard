@@ -8,6 +8,12 @@ import {
 } from "../../redux_config/incidencesSlice"
 
 import getMinute from "../../functions/getMinute"
+import {
+  setGoalAnimation,
+  setRedCardAnimation,
+  setSubstitutionAnimation,
+  setYellowCardAnimation,
+} from "../../redux_config/animationSlice"
 
 function GoForIt({
   incidence,
@@ -35,13 +41,13 @@ function GoForIt({
 
   const handleOnClick = (event) => {
     // if (!active) return
-
     if (incidence === "score" && team && player) {
       const minute = getMinute(time)
       setIncidence("")
       setTeam("")
       setPlayer("")
       dispatch(setGoal({ team, player, time: minute, incidence }))
+      dispatch(setGoalAnimation(team))
     }
     if (incidence === "yellowCard" && team && player) {
       const minute = getMinute(time)
@@ -56,6 +62,7 @@ function GoForIt({
           incidence,
         })
       )
+      dispatch(setYellowCardAnimation(true))
     }
     if (incidence === "redCard" && team && player) {
       const minute = getMinute(time)
@@ -63,6 +70,7 @@ function GoForIt({
       setTeam("")
       setPlayer("")
       dispatch(setRedCard({ team, player, time: minute, incidence }))
+      dispatch(setRedCardAnimation(true))
     }
     if (incidence === "substitution" && team && player && substitution) {
       const minute = getMinute(time)
@@ -79,6 +87,7 @@ function GoForIt({
           incidence,
         })
       )
+      dispatch(setSubstitutionAnimation(true))
     }
   }
 

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { motion } from "framer-motion"
-import redCard from "/icons/red-card.png"
 
 function Notification() {
   const globalIncidences = useSelector(
     (state) => state.incidences.globalIncidences
   )
-  const [image, setImgae] = useState()
+  const [team, setTeam] = useState()
+  const [incidence, setIncidence] = useState()
   const notificationVariant = {
     hidden: { x: 200, y: -150, opacity: 0 },
     visible: {
@@ -22,8 +22,11 @@ function Notification() {
     if (globalIncidences.length === 0) {
       return
     }
+    const lastTeam = globalIncidences[0].team
+    setTeam(lastTeam)
+
     const lastIncidence = globalIncidences[0].incidence
-    const team = globalIncidences[0].team
+    setIncidence(lastIncidence)
 
     if (lastIncidence === "yellowCard") {
     }
@@ -37,11 +40,10 @@ function Notification() {
       variants={notificationVariant}
       initial="hidden"
       animate="visible"
-      className="hidden"
+      className=""
     >
-      <div className="px-4 py-2 bg-slate-300 z-[-10] rounded-b-xl sm:flex items-center gap-4  ">
-        <img className="w-8" src={redCard} alt="incidence icon" />
-        <p>Esto es Nacional</p>
+      <div className="px-4 py-2 bg-slate-200 z-[-10] h-10 rounded-b-xl">
+        <p>{incidence}</p>
       </div>
     </motion.div>
   )

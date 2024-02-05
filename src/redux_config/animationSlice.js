@@ -10,13 +10,26 @@ const animationSlice = createSlice({
     yellowCard: false,
   },
   reducers: {
-    setGoalAnimation(state, action) {},
+    setGoalAnimation(state, action) {
+      const team = action.payload
+      if (team === "home") {
+        state.goal.home = true
+      } else {
+        state.goal.away = true
+      }
+    },
     setInjuryTimeAnimation(state, action) {
       state.injuryTime = action.payload
     },
-    setRedCardAnimation(state, action) {},
-    setSubstitutionAnimation(state, action) {},
-    setYellowCardAnimation(state, action) {},
+    setRedCardAnimation(state, action) {
+      state.redCard = action.payload
+    },
+    setSubstitutionAnimation(state, action) {
+      state.substitution = action.payload
+    },
+    setYellowCardAnimation(state, action) {
+      state.yellowCard = action.payload
+    },
   },
 })
 export const {
